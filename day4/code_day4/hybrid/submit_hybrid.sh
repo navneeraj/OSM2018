@@ -3,9 +3,9 @@
 #SBATCH --tasks-per-node=2
 #SBATCH -c 8
 
-export OMP_NUM_THREADS=8
+export OMP_NUM_THREADS=4
 module load openmpi
 
 ### hybrid executable
-srun -c 8 ./1.hello_world_mpi.exec
+mpirun -np 1 ./1a.hello_world_hybrid.exec
 

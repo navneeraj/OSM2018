@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
- 
-void main()
+#include <omp.h>
+#include <iostream>
+
+
+int main()
 {
     double niter = 10000000;
     double x,y;
@@ -12,6 +15,7 @@ void main()
     double pi;
     //srand(time(NULL));
     //main loop
+    double time_serial = -omp_get_wtime();
     for (i=0; i<niter; ++i)
     {
         //get random points
@@ -24,5 +28,11 @@ void main()
             ++count;
         }
     }
-    pi = ((double)count/(double)niter)*4.0;          //p = 4(m/n)
-    //printf("Pi: %f\n", pi);
+    pi = 4.0* (double)count/(double)niter;
+    time_serial += omp_get_wtime();
+
+    std::cout << niter
+              << " steps approximates pi as : "
+              << pi;
+    std::cout << "   the solution took " << time_serial << " seconds" <<std::endl;
+}

@@ -1,4 +1,4 @@
-#!/bin/bash -l
+i#!/bin/bash -l
 
 #SBATCH --ntasks=1
 #SBATCH --ntasks-per-node=1
@@ -11,9 +11,7 @@
 #SBATCH --output=openmp_test.out
 #SBATCH --error=openmp_test.err
 
-export OMP_NUM_THREADS=8
-
-
+export OMP_NUM_THREADS=256
 ### openmp executable
-./1.hello_world.exec
+./4a.integration_pi.exec
 

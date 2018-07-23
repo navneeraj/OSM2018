@@ -12,7 +12,7 @@
 #SBATCH --mail-type=BEGIN,END,DAIL
 
 # this job requests 4 cores. Cores can be selected from various nodes.
-#SBATCH --ntasks=4
+#SBATCH --ntasks=8
 
 # there are many partitions on Midway1 and it is important to specify which
 # partition you want to run your job on. Not having the following option, the
@@ -24,4 +24,4 @@ module load openmpi
 
 # Run the process with mpirun. Notice -n is not required. mpirun will
 # automatically figure out how many processes to run from the slurm options
-mpirun ./1a.hello_world_mpi_cpp.exec
+mpirun -np 2 ./2a.ping_pong.exec

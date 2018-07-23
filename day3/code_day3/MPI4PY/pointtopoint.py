@@ -4,7 +4,7 @@ from mpi4py import MPI
 comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
 
-randNum = numpy.zeros(1)
+randNum =4+ numpy.zeros(1)
 
 if rank == 1:
         randNum = numpy.random.random_sample(1)

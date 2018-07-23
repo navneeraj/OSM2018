@@ -30,8 +30,8 @@ int main(int argc, char **argv)
 
       pi = acos(-1.0);  /* = 3.14159... */
       a = 0.;           /* lower limit of integration */
-      b = pi*1./2.;     /* upper limit of integration */
-      n = 500;          /* number of increment within each process */
+      b = pi*4./2.;     /* upper limit of integration */
+      n = 10000;          /* number of increment within each process */
       tag = 123;        /* set the tag to identify this particular job */
       h = (b-a)/n/p;    /* length of increment */
 

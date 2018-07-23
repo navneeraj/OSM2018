@@ -18,9 +18,9 @@ int main(int argc, char *argv[]) {
     
     input=rank+1;
 
-    MPI_Reduce(&input, &result, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&input, &result, 1, MPI_INT, MPI_SUM, 1, MPI_COMM_WORLD);
 
-    if (rank==0){
+    if (rank==1){
       cout << "Rank 0 says: result is "<<  result << endl;
     }
     
